@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
 
     public bool canDrag;
     public bool canAttack;
-    // public Player player;
-    // public Enemy enemy;
 
     public Button endTurn;
-    // public GameObject gameOver;
-    // public TMP_Text winner;
+    public string winner = "";
+
+    public TMP_Text winText;
+    public GameObject gameOver;
 
     private void Awake()
     {
@@ -60,13 +60,8 @@ public class GameManager : MonoBehaviour
         ChangeState(new CombatState());
     }
 
-    public void Play()
+    public void Retry()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

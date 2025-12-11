@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -53,7 +54,7 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (!GameManager.Instance.canDrag) return;
 
-        if (Physics.Raycast(transform.position + Vector3.up * 2f, Vector3.down, 10f, mask))
+        if (Physics.Raycast(transform.position + Vector3.up * 2f, Vector3.down, 10f, mask) && Physics.OverlapSphere(transform.position, .1f).ToArray().Length == 1)
         {
             transform.position = new Vector3(
                 Mathf.RoundToInt(transform.position.x),

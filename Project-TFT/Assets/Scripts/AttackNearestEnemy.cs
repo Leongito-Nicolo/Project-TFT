@@ -25,7 +25,11 @@ public class AttackNearestEnemy : MonoBehaviour
 
         target = FindClosestTarget(_tag);
 
-        if (!target) return;
+        if (!target)
+        {
+            GameManager.Instance.winner = transform.tag;
+            return;
+        }
 
 
         if (Vector3.Distance(transform.position, target.transform.position) < 2f)
@@ -50,6 +54,15 @@ public class AttackNearestEnemy : MonoBehaviour
         GameObject closestGameObject = GameObject.FindGameObjectsWithTag(trgt)
                           .OrderBy(go => Vector3.Distance(go.transform.position, transform.position))
                           .FirstOrDefault();
+
+        if (closestGameObject && closestGameObject.TryGetComponent(out DragObject playerDrag))
+        {
+            if (!playerDrag.isDeployed)
+            {
+                closestGameObject = null;
+            }
+        }
+
         return closestGameObject;
     }
 }

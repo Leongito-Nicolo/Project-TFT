@@ -1,6 +1,3 @@
-using System.Collections;
-using UnityEngine;
-
 public class CombatState : BaseState
 {
     public CombatState() : base() { }
@@ -19,19 +16,9 @@ public class CombatState : BaseState
 
     public override void Update()
     {
-        // GameManager.Instance.player.UpdateUI();
-        // GameManager.Instance.enemy.UpdateUI();
-
-        // if (hasAttacked)
-        // {
-        //     if (GameManager.Instance.player.currentHealth <= 0)
-        //     {
-        //         GameManager.Instance.ChangeState(new GameOverState());
-        //     }
-        //     else
-        //     {
-        //         GameManager.Instance.ChangeState(new PlayerTurnState());
-        //     }
-        // }
+        if (GameManager.Instance.winner != "")
+        {
+            GameManager.Instance.ChangeState(new GameOverState());
+        }
     }
 }

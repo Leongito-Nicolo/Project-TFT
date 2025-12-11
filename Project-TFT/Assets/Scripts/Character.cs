@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _damage;
     [SerializeField] private float _attackCooldown;
+    [SerializeField] private Slider _healthSlider;
 
     private float currentHealth;
     private bool isAlive = true;
@@ -15,12 +17,18 @@ public class Character : MonoBehaviour
     void Start()
     {
         currentHealth = _maxHealth;
+        _healthSlider.maxValue = _maxHealth;
+        _healthSlider.value = _maxHealth;
         ShouldAttackNext = true;
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+
+        _healthSlider.value = currentHealth;
+
+
 
         if (currentHealth <= 0)
         {
