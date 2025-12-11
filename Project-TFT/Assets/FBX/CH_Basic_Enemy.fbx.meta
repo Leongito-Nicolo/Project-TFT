@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10fdb61785ee9004f9c728c5e7e4feb3
+guid: 0d0c21f41b520774995d6e52a6955615
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,12 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Merged_male_zbrush1_4
-    second: {fileID: 2100000, guid: 3493ed24e27f5fb4c9f6c190611cea65, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Merged_male_zbrush1_4.001
+      name: Merged_PM3D_Cylinder3D
     second: {fileID: 2100000, guid: 3493ed24e27f5fb4c9f6c190611cea65, type: 2}
   materials:
     materialImportMode: 2
