@@ -9,12 +9,16 @@ public class AttackNearestEnemy : MonoBehaviour
     private GameObject target;
     private DragObject drag;
     private Character character;
+    private Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         drag = GetComponent<DragObject>();
         character = GetComponent<Character>();
+        rb = GetComponent<Rigidbody>();
+
+        rb.constraints |= RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 
     // Update is called once per frame
@@ -34,9 +38,9 @@ public class AttackNearestEnemy : MonoBehaviour
 
         if (Vector3.Distance(transform.position, target.transform.position) < 2f)
         {
-            Debug.Log(character.ShouldAttackNext);
             if (character.ShouldAttackNext)
             {
+                rb.constraints -= RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                 if (target.TryGetComponent(out Character enemy))
                 {
                     StartCoroutine(character.Attack(enemy));
