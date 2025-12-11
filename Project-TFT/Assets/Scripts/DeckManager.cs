@@ -14,6 +14,10 @@ public class DeckManager : MonoBehaviour
 
     public int currentHeroesInHand = 0;
 
+    public int maxMana;
+
+    public int currentMana;
+
     private void Awake()
     {
         if (Instance == null)

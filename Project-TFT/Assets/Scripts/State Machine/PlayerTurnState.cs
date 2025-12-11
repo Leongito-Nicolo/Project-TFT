@@ -8,14 +8,9 @@ public class PlayerTurnState : BaseState
     {
         GameManager.Instance.endTurn.gameObject.SetActive(true);
         GameManager.Instance.canDrag = true;
-        if (DeckManager.Instance.currentHeroesInHand < DeckManager.Instance.minimumHeroesInHand)
-        {
-            int amount = DeckManager.Instance.minimumHeroesInHand - DeckManager.Instance.currentHeroesInHand;
-            for (int i = 0; i < amount; i++)
-            {
-                DeckManager.Instance.GenerateRandomHero();
-            }
-        }
+        DeckManager.Instance.currentMana = DeckManager.Instance.maxMana;
+
+        DeckManager.Instance.GenerateRandomHero();
     }
 
     public override void Exit()

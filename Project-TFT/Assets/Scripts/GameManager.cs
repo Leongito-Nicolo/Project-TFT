@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text winText;
     public GameObject gameOver;
+    public Slider manaSlider;
 
     private void Awake()
     {
@@ -30,6 +31,9 @@ public class GameManager : MonoBehaviour
         }
 
         _currentState = new PlayerTurnState();
+
+        manaSlider.maxValue = DeckManager.Instance.maxMana;
+        manaSlider.value = DeckManager.Instance.maxMana;
     }
 
     void Start()
@@ -45,6 +49,20 @@ public class GameManager : MonoBehaviour
     public void FixedUpdate()
     {
         //_currentState.FixedUpdate();
+    }
+
+    public void UpdateMana()
+    {
+        manaSlider.value = DeckManager.Instance.currentMana;
+    }
+
+    public void BuyHero()
+    {
+        if (DeckManager.Instance.currentMana <= 0) return;
+
+        DeckManager.Instance.GenerateRandomHero();
+        DeckManager.Instance.currentMana--;
+        UpdateMana();
     }
 
 

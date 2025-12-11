@@ -212,8 +212,9 @@ GameObject:
   - component: {fileID: 2537336749928564555}
   - component: {fileID: 8863748795299507763}
   - component: {fileID: 2507136007306287847}
+  - component: {fileID: 146940486810209267}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,6 +303,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &146940486810209267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4553523098385444591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc622f41ddb18524bbd78814856cbfcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateCanvas
 --- !u!1 &4909755174542800046
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +407,7 @@ GameObject:
   - component: {fileID: -6260521610483396236}
   - component: {fileID: 4951185119952356533}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: CH_Hero_Ranged
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +436,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6902301881792436750}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4731625221394857352, guid: 69d7cbe27f34ae446a85b6df7b87406f, type: 3}
 --- !u!23 &220411871690680013
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -449,7 +462,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -876546973899608171, guid: b58dd1240723cd6468b25c37849ba37d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -537,9 +550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a634f286ca8011f4fae77ec256f1cf93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  _maxHealth: 5
-  _damage: 2
-  _attackCooldown: 1
+  _maxHealth: 4
+  _damage: 1
+  _attackCooldown: 0.5
   _healthSlider: {fileID: 206606385377151465}
 --- !u!54 &4951185119952356533
 Rigidbody:

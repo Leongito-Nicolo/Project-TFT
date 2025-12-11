@@ -1,4 +1,5 @@
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class AttackNearestEnemy : MonoBehaviour
@@ -50,6 +51,7 @@ public class AttackNearestEnemy : MonoBehaviour
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * _speed);
+            transform.rotation = Quaternion.LookRotation((target.transform.position - transform.position) * Time.deltaTime);
         }
     }
 
