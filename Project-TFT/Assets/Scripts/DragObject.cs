@@ -57,9 +57,9 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (Physics.Raycast(transform.position + Vector3.up * 2f, Vector3.down, 10f, mask) && Physics.OverlapSphere(transform.position, .1f).ToArray().Length == 1)
         {
             transform.position = new Vector3(
-                Mathf.RoundToInt(transform.position.x),
+                Mathf.RoundToInt(transform.position.x - 0.5f) + 0.5f,
                 transform.position.y,
-                Mathf.RoundToInt(transform.position.z)
+                Mathf.RoundToInt(transform.position.z - 0.5f) + 0.5f
             );
             isDeployed = true;
         }
