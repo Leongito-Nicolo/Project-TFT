@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 5295544055585836968}
   - component: {fileID: -1136532845285425508}
   - component: {fileID: 965836261947561507}
+  - component: {fileID: 7939807148851703269}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Player
@@ -538,3 +539,30 @@ MonoBehaviour:
   _damage: 1
   _attackCooldown: 0.5
   _healthSlider: {fileID: 94802215873093461}
+--- !u!54 &7939807148851703269
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7030951788363817995}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
